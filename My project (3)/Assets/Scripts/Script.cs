@@ -11,8 +11,6 @@ public class Script : MonoBehaviour {
     public Transform playerCameraRoot;
     //private Transform playerModel;
 
-    private Vector3 startPosition;
-
     //Car
     public Rigidbody carRb;
     public GameObject car;
@@ -99,9 +97,10 @@ public class Script : MonoBehaviour {
         } else {
             anim.SetBool("Walking", false);
             rb.velocity = direction * maxSpeed * Time.fixedDeltaTime;
-            //rb.transform.rotation = Quaternion.identity;
+            
 
         }
+        //transform.rotation = Quaternion.identity;
         
         
     }
@@ -132,13 +131,6 @@ public class Script : MonoBehaviour {
 
         
     }
-
-    /*
-    private void OnCollisionEnter(){
-        rb.transform.position = startPosition;
-
-    }
-    */
 
     void FixedUpdate(){
         Moving(movement);
